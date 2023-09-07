@@ -1,0 +1,26 @@
+.friend_list {
+  display: flex;
+  flex-direction: column;
+}
+
+.friend_item {
+  display: flex;
+  /* flex-direction: row; */
+  width: 100%;
+}
+
+.green {
+  background-color: aquamarine;
+}
+
+.red {
+  background-color: crimson;
+}
+.green,
+.red {
+  content: '';
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
