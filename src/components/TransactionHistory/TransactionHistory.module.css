@@ -1,0 +1,29 @@
+.transaction_table,
+.transaction_head,
+.transaction_body,
+.table_row {
+  justify-items: center;
+}
+.transaction_table {
+  min-width: 400px;
+  border-collapse: collapse;
+  box-shadow: 0px 0px 8px gray;
+}
+.table_row th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #00bcd5;
+  color: white;
+}
+.transaction_body tr:nth-child(odd) {
+  background-color: #fff;
+}
+.table_row th,
+.table_row td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+tr {
+  background-color: #ecf1f4;
+}

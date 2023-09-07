@@ -9,11 +9,11 @@ import transactions from './data/transactions.json';
 
 export default function App() {
   return (
-    <div>
+    <>
       <Profile {...user} />
       <Statistics title="Upload stats" stats={data} />
-      <FriendList friends={friends} />;
+      <FriendList friends={friends} />
       <TransactionHistory items={transactions} />
-    </div>
+    </>
   );
 }

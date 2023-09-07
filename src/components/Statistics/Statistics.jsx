@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
 import styles from './Statistics.module.css';
-import { styled } from 'styled-components';
-import { theme } from 'styles/theme';
 
 let newColor;
 const randomColor = () => {
@@ -38,10 +36,14 @@ function Statistics({ stats, title }) {
 }
 
 Statistics.propTypes = {
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ).isRequired,
   title: PropTypes.string.isRequired,
-  id: PropTypes.string,
-  label: PropTypes.string,
-  percentage: PropTypes.number,
 };
 
 export default Statistics;

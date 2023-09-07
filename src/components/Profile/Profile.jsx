@@ -1,7 +1,5 @@
 import PropTypes from 'prop-types';
 import styles from './Profile.module.css';
-import { styled } from 'styled-components';
-import { theme } from 'styles/theme';
 
 function Profile({ username, tag, location, avatar, stats }) {
   return (
@@ -32,17 +30,11 @@ function Profile({ username, tag, location, avatar, stats }) {
 }
 
 Profile.propTypes = {
-  username: PropTypes.string,
-  tag: PropTypes.string,
-  location: PropTypes.string,
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
   avatar: PropTypes.string,
   stats: PropTypes.objectOf(PropTypes.number),
 };
 
 export default Profile;
-
-/* export const StyledProfile = styled.div`
-  width: ${theme.spacing(100)};
-  border-radius: 10px;
-`;
- */
