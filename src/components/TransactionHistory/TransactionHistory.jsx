@@ -15,7 +15,7 @@ function TransactionHistory({ items }) {
       <tbody className={styles.transaction_body}>
         {items.map(({ id, type, amount, currency }) => (
           <tr key={id} className={styles.table_row}>
-            <td>{type}</td>
+            <td className={styles.table_type}>{type}</td>
             <td>{amount}</td>
             <td>{currency}</td>
           </tr>

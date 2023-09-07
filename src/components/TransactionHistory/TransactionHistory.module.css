@@ -5,16 +5,19 @@
   justify-items: center;
 }
 .transaction_table {
+  color: #717376;
+  text-align: center;
   min-width: 400px;
   border-collapse: collapse;
   box-shadow: 0px 0px 8px gray;
 }
 .table_row th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
   background-color: #00bcd5;
   color: white;
+}
+.table_type {
+  text-align: left;
+  text-transform: capitalize;
 }
 .transaction_body tr:nth-child(odd) {
   background-color: #fff;
@@ -22,7 +25,7 @@
 .table_row th,
 .table_row td {
   border: 1px solid #ddd;
-  padding: 8px;
+  padding: 10px 100px;
 }
 tr {
   background-color: #ecf1f4;
