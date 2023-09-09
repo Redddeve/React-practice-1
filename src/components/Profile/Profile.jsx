@@ -1,31 +1,40 @@
 import PropTypes from 'prop-types';
-import styles from './Profile.module.css';
+import {
+  Avatar,
+  Description,
+  ProfileBox,
+  StatsItem,
+  StatsList,
+  StatsQuantity,
+  Text,
+  TextUsername,
+} from './Profile.styled';
 
 function Profile({ username, tag, location, avatar, stats }) {
   return (
-    <div className={styles.profile}>
-      <div className={styles.description}>
-        <img src={avatar} alt="User avatar" className={styles.avatar} />
-        <p className={styles.name}>{username}</p>
-        <p className={styles.tag}>@{tag}</p>
-        <p className={styles.location}>{location}</p>
-      </div>
+    <ProfileBox>
+      <Description>
+        <Avatar src={avatar} alt="User avatar" />
+        <TextUsername>{username}</TextUsername>
+        <Text>@{tag}</Text>
+        <Text>{location}</Text>
+      </Description>
 
-      <ul className={styles.stats}>
-        <li>
-          <span className={styles.label}>Followers</span>
-          <span className={styles.quantity}>{stats.followers}</span>
-        </li>
-        <li>
-          <span className={styles.label}>Views</span>
-          <span className={styles.quantity}>{stats.views}</span>
-        </li>
-        <li>
-          <span className={styles.label}>Likes</span>
-          <span className={styles.quantity}>{stats.likes}</span>
-        </li>
-      </ul>
-    </div>
+      <StatsList>
+        <StatsItem>
+          <span>Followers</span>
+          <StatsQuantity>{stats.followers}</StatsQuantity>
+        </StatsItem>
+        <StatsItem>
+          <span>Views</span>
+          <StatsQuantity>{stats.views}</StatsQuantity>
+        </StatsItem>
+        <StatsItem>
+          <span>Likes</span>
+          <StatsQuantity>{stats.likes}</StatsQuantity>
+        </StatsItem>
+      </StatsList>
+    </ProfileBox>
   );
 }
 
@@ -34,7 +43,7 @@ Profile.propTypes = {
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   avatar: PropTypes.string,
-  stats: PropTypes.objectOf(PropTypes.number),
+  stats: PropTypes.objectOf(PropTypes.number).isRequired,
 };
 
 export default Profile;

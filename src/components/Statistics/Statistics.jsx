@@ -1,5 +1,11 @@
 import PropTypes from 'prop-types';
-import styles from './Statistics.module.css';
+import {
+  Span,
+  StatItem,
+  StatList,
+  StatisticsBox,
+  Title,
+} from './Statistics.styled';
 
 let newColor;
 const randomColor = () => {
@@ -17,21 +23,17 @@ const randomColor = () => {
 
 function Statistics({ stats, title }) {
   return (
-    <section className={styles.statistics}>
-      {title && <h2 className={styles.title}>{title}</h2>}
-      <ul className={styles.stat_list}>
+    <StatisticsBox>
+      {title && <Title>{title}</Title>}
+      <StatList>
         {stats.map(({ id, label, percentage }) => (
-          <li
-            className={styles.item}
-            key={id}
-            style={{ backgroundColor: randomColor(), color: newColor }}
-          >
-            <span className={styles.label}>{label}</span>
-            <span className={styles.percentage}>{percentage} %</span>
-          </li>
+          <StatItem $bgc={randomColor()} $color={newColor} key={id}>
+            <Span>{label}</Span>
+            <Span $perc>{percentage} %</Span>
+          </StatItem>
         ))}
-      </ul>
-    </section>
+      </StatList>
+    </StatisticsBox>
   );
 }
 
