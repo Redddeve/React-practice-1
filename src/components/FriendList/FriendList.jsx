@@ -1,24 +1,23 @@
 import PropTypes from 'prop-types';
-import styles from './FriendList.module.css';
+import {
+  Avatar,
+  FriendsItem,
+  FriendsList,
+  Name,
+  OnlineStatus,
+} from './FriendList.styled';
 
 function FriendList({ friends }) {
   return (
-    <ul className={styles.friend_list}>
+    <FriendsList>
       {friends.map(({ avatar, name, isOnline, id }) => (
-        <li className={styles.friend_item} key={id}>
-          <span className={isOnline ? styles.green : styles.red}>
-            {/* {isOnline ? 'Online' : 'Offline'} */}
-          </span>
-          <img
-            className={styles.avatar}
-            src={avatar}
-            alt="User avatar"
-            width="48"
-          />
-          <p className={styles.name}>{name}</p>
-        </li>
+        <FriendsItem key={id}>
+          <OnlineStatus $status={isOnline}></OnlineStatus>
+          <Avatar src={avatar} alt="User avatar" width="48" />
+          <Name>{name}</Name>
+        </FriendsItem>
       ))}
-    </ul>
+    </FriendsList>
   );
 }
 
