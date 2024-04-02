@@ -1,8 +1,8 @@
 {
-  "name": "goit-react-hw-01-components",
+  "name": "react-practice-1-components",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Redddeve.github.io/goit-react-hw-01-components/",
+  "homepage": "https://Redddeve.github.io/React-practice-1/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
