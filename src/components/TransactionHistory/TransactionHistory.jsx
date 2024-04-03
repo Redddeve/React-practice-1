@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import styles from './TransactionHistory.module.css';
 import {
   Table,
   TableDesc,
